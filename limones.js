@@ -102,6 +102,10 @@ function detectarPerdido(){
         aparecerLimones();
         vidas--;
         mostrarEnSpan("txtVidas", vidas);
+
+        if(vidas==0){
+            alert("¡GAME OVER! Tu puntaje final es: " + puntaje);
+        }
     }
 }
 
