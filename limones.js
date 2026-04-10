@@ -1,13 +1,13 @@
 let canvas=document.getElementById("areaJuego");
 let ctx=canvas.getContext("2d");
 
-const ALTURA_SUELO=40;
+const ALTURA_SUELO=30;
 
-const ALTURA_PERSONAJE=60;
-const ANCHO_PERSONAJE=40;
+const ALTURA_PERSONAJE=70;
+const ANCHO_PERSONAJE=50;
 
-const ANCHO_LIMON=120;
-const ALTURA_LIMON=120;
+const ANCHO_LIMON=30;
+const ALTURA_LIMON=30;
 
 
 let personajeX=canvas.width/2;
@@ -19,7 +19,10 @@ let limonY=0;
 let puntaje=0;
 let vidas=3;
 
+let velocidadLimones=500;
+
 function iniciarJuego(){
+    setInterval(bajarLimones, velocidadLimones);
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimones();
