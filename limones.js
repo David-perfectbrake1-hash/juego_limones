@@ -105,6 +105,7 @@ function detectarAtrapado(){
             alert(
                 "¡Felicidades! Has alcanzado el puntaje máximo."
             );
+            clearInterval(intervaloLimones);
         }
 
     }
@@ -126,6 +127,7 @@ function detectarPerdido(){
 
         if(vidas===0){
             alert("¡GAME OVER! Tu puntaje final es: " + puntaje);
+            clearInterval(intervaloLimones);
         }
     }
 }
