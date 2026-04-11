@@ -6,7 +6,7 @@ const ALTURA_SUELO=30;
 const ALTURA_PERSONAJE=70;
 const ANCHO_PERSONAJE=50;
 
-const ANCHO_LIMON=300;
+const ANCHO_LIMON=30;
 const ALTURA_LIMON=30;
 
 
@@ -20,7 +20,7 @@ let puntaje=0;
 let vidas=3;
 
 let velocidadLimones=200;
-let intervaloLimones;
+let intervaloLimones=null;
 
 function iniciarJuego(){
     
@@ -132,9 +132,23 @@ function detectarPerdido(){
     }
 }
 
-
 function aparecerLimones(){
     limonX = generarAleatorio(0, canvas.width - ANCHO_LIMON);
     limonY = 0;
     actualizarPantalla();
+}
+
+function reiniciarJuego(){
+    clearInterval(intervaloLimones);
+
+    puntaje=0;
+    vidas=3;
+    velocidadLimones=200;
+    
+    mostrarEnSpan("txtPuntaje", puntaje);
+    mostrarEnSpan("txtVidas", vidas);
+
+    limonY=0;
+
+    iniciarJuego();
 }
