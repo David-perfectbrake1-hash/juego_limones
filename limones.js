@@ -6,7 +6,7 @@ const ALTURA_SUELO=30;
 const ALTURA_PERSONAJE=70;
 const ANCHO_PERSONAJE=50;
 
-const ANCHO_LIMON=30;
+const ANCHO_LIMON=300;
 const ALTURA_LIMON=30;
 
 
@@ -19,10 +19,13 @@ let limonY=0;
 let puntaje=0;
 let vidas=3;
 
-let velocidadLimones=500;
+let velocidadLimones=200;
+let intervaloLimones;
 
 function iniciarJuego(){
-    setInterval(bajarLimones, velocidadLimones);
+    
+    intervaloLimones=setInterval(bajarLimones, velocidadLimones);
+    
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimones();
@@ -92,8 +95,26 @@ function detectarAtrapado(){
     ){
         aparecerLimones();
         puntaje++;
-        mostrarEnSpan("txtPuntaje", puntaje);   }
+        mostrarEnSpan("txtPuntaje", puntaje); 
+        
+        if (puntaje === 3) {
+            cambiarVelocidadLimones(150);
+        } else if (puntaje === 6) {
+            cambiarVelocidadLimones(100);
+        } else if (puntaje === 10) {
+            alert(
+                "¡Felicidades! Has alcanzado el puntaje máximo."
+            );
+        }
+
+    }
 }   
+
+function cambiarVelocidadLimones(nuevaVelocidad){
+    clearInterval(intervaloLimones);
+    velocidadLimones=nuevaVelocidad;
+    intervaloLimones=setInterval(bajarLimones, velocidadLimones);
+}
 
 function detectarPerdido(){
     if(
@@ -103,7 +124,7 @@ function detectarPerdido(){
         vidas--;
         mostrarEnSpan("txtVidas", vidas);
 
-        if(vidas==0){
+        if(vidas===0){
             alert("¡GAME OVER! Tu puntaje final es: " + puntaje);
         }
     }
