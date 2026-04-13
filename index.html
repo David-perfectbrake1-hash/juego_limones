@@ -1,4 +1,52 @@
 <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caza Limones</title>
+  <link rel="stylesheet" href="limones.css">
+  <!-- Tipografía moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body onload="iniciarJuego()">
+  <div class="contenedor">
+    <header class="game-header">
+      <h1>Caza Limones</h1>
+      <p class="subtitle">Atrapar Limones</p>
+      <p class="tagline">Si del cielo te caen limones .....</p>
+    </header>
+
+    <div class="panel stats-panel">
+      <div class="stat-item">
+        <span class="stat-label">Puntaje</span>
+        <span class="stat-value" id="txtPuntaje">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Vidas</span>
+        <span class="stat-value" id="txtVidas">3</span>
+      </div>
+    </div>
+
+    <canvas id="areaJuego" width="600" height="400"></canvas>
+
+    <div class="botones">
+      <button id="izquierda" onclick="moverIzquierda()">⬅ Izquierda</button>
+      <button id="derecha" onclick="moverDerecha()">Derecha ➡</button>
+      <button id="reiniciar" onclick="reiniciarJuego()">🔄 REINICIAR</button>
+    </div>
+
+    <footer class="author">Autor: David_RS</footer>
+  </div>
+
+  <script src="limones.js"></script>
+  <script src="utils.js"></script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Caza Limones</title>
@@ -29,4 +77,4 @@
   <script src="utils.js"></script>
 
 </body>
-</html>
+</html> -->

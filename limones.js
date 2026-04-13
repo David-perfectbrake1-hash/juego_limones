@@ -23,7 +23,7 @@ let velocidadLimones=200;
 let intervaloLimones=null;
 
 function iniciarJuego(){
-    
+
     intervaloLimones=setInterval(bajarLimones, velocidadLimones);
     
     dibujarSuelo();
@@ -152,3 +152,8 @@ function reiniciarJuego(){
 
     iniciarJuego();
 }
+
+window.addEventListener("keydown", (evento) => {
+    if (evento.key === "ArrowLeft") moverIzquierda();
+    if (evento.key === "ArrowRight") moverDerecha();
+});
