@@ -108,11 +108,13 @@ function dibujarLimones() {
 function moverIzquierda() {
   ocultarInstrucciones();
   personajeX -= 10;
+  verificarLimitesPersonaje();
   actualizarPantalla();
 }
 function moverDerecha() {
   ocultarInstrucciones();
   personajeX += 10;
+  verificarLimitesPersonaje();
   actualizarPantalla();
 }
 function actualizarPantalla() {
@@ -258,4 +260,15 @@ function dibujarBannerInstrucciones() {
         canvas.width / 2, 
         canvas.height / 2
     );
+}
+
+function verificarLimitesPersonaje() {
+  // Si sale por la izquierda (X es menor que el ancho negativo del personaje)
+  if (personajeX + ANCHO_PERSONAJE < 0) {
+    personajeX = canvas.width;
+  } 
+  // Si sale por la derecha (X es mayor que el ancho del canvas)
+  else if (personajeX > canvas.width) {
+    personajeX = -ANCHO_PERSONAJE;
+  }
 }
