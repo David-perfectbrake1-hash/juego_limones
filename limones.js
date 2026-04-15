@@ -151,9 +151,9 @@ function detectarAtrapado() {
       limpiarCanvas();
       dibujarSuelo();
       ctx.font = "30px Arial ";
-      ctx.fillStyle = "green ";
-      ctx.textAlign = "center ";
-      ctx.textBaseline = "middle ";
+      ctx.fillStyle = "green";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
       ctx.fillText("¡FELICIDADES! ", canvas.width / 2, canvas.height / 2);
       ctx.font = "20px Arial ";
       ctx.fillStyle = "white ";
@@ -178,9 +178,9 @@ function detectarPerdido() {
       limpiarCanvas();
       dibujarSuelo();
       ctx.font = "30px Arial ";
-      ctx.fillStyle = "red ";
-      ctx.textAlign = "center ";
-      ctx.textBaseline = "middle ";
+      ctx.fillStyle = "red";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
       ctx.fillText("GAME OVER ", canvas.width / 2, canvas.height / 2);
       ctx.font = "20px Arial ";
       ctx.fillStyle = "white ";
