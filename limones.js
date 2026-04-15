@@ -106,16 +106,20 @@ function dibujarLimones() {
 // LÓGICA DE MOVIMIENTO Y ACTUALIZACIÓN (SIN MODIFICACIONES)
 // ─────────────────────────────────────────────────────────────
 function moverIzquierda() {
-  ocultarInstrucciones();
-  personajeX -= 10;
-  verificarLimitesPersonaje();
-  actualizarPantalla();
+  if (vidas > 0 && puntaje < 10) {
+    ocultarInstrucciones();
+    personajeX -= 10;
+    verificarLimitesPersonaje();
+    actualizarPantalla();
+  }
 }
 function moverDerecha() {
-  ocultarInstrucciones();
-  personajeX += 10;
-  verificarLimitesPersonaje();
-  actualizarPantalla();
+if (vidas > 0 && puntaje < 10) {
+    ocultarInstrucciones();
+    personajeX += 10;
+    verificarLimitesPersonaje();
+    actualizarPantalla();
+  }
 }
 function actualizarPantalla() {
   limpiarCanvas();
