@@ -105,10 +105,12 @@ function dibujarLimones() {
 // LÓGICA DE MOVIMIENTO Y ACTUALIZACIÓN (SIN MODIFICACIONES)
 // ─────────────────────────────────────────────────────────────
 function moverIzquierda() {
+  ocultarInstrucciones();
   personajeX -= 10;
   actualizarPantalla();
 }
 function moverDerecha() {
+  ocultarInstrucciones();
   personajeX += 10;
   actualizarPantalla();
 }
@@ -213,3 +215,10 @@ window.addEventListener("keydown", (evento) => {
   if (evento.key === "ArrowLeft") moverIzquierda();
   if (evento.key === "ArrowRight") moverDerecha();
 });
+
+function ocultarInstrucciones() {
+    let instrucciones = document.querySelector(".instrucciones-teclado");
+    if (instrucciones) {
+        instrucciones.style.display = "none";
+    }
+}

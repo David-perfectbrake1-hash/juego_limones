@@ -192,4 +192,5 @@ canvas {
   opacity: 0.8;
   font-style: italic;
   text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+  height: 1.2rem;
 }
