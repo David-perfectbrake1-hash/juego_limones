@@ -13,6 +13,7 @@ let puntaje = 0;
 let vidas = 3;
 let velocidadLimones = 200;
 let intervaloLimones = null;
+let mostrarInstruccionesCanvas = true;
 
 function iniciarJuego() {
   intervaloLimones = setInterval(bajarLimones, velocidadLimones);
@@ -119,6 +120,9 @@ function actualizarPantalla() {
   dibujarSuelo();
   dibujarPersonaje();
   dibujarLimones();
+
+  dibujarBannerInstrucciones();
+
 }
 function limpiarCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -217,8 +221,29 @@ window.addEventListener("keydown", (evento) => {
 });
 
 function ocultarInstrucciones() {
-    let instrucciones = document.querySelector(".instrucciones-teclado");
-    if (instrucciones) {
-        instrucciones.style.display = "none";
+    mostrarInstruccionesCanvas = false; // Detiene el dibujo en el canvas
+    let instruccionesHTML = document.querySelector(".instrucciones-teclado");
+    if (instruccionesHTML) {
+        instruccionesHTML.style.display = "none";
     }
+}
+
+function dibujarBannerInstrucciones() {
+    if (!mostrarInstruccionesCanvas) return;
+
+    // 1. Dibujar la franja blanca translúcida
+    ctx.fillStyle = "rgba(255, 255, 255, 0.5)"; // Blanco con 50% de opacidad
+    const altoBanner = 50;
+    ctx.fillRect(0, canvas.height / 2 - altoBanner / 2, canvas.width, altoBanner);
+
+    // 2. Configurar y dibujar el texto
+    ctx.font = "bold 18px Inter, Arial";
+    ctx.fillStyle = "#3d1a10"; // Tu color maderoso oscuro para contraste
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(
+        "Usa las flechas del teclado ◀ ▶ para cosechar los limones", 
+        canvas.width / 2, 
+        canvas.height / 2
+    );
 }
