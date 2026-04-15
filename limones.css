@@ -133,13 +133,20 @@ body::before {
 /* --- ÁREA DE JUEGO --- */
 
 canvas {
-  background: linear-gradient(to bottom, rgba(2, 44, 34, 0.85), rgba(15, 50, 30, 0.95));
+  
+  background: rgba(6, 78, 59, 0.4); /* Verde esmeralda muy oscuro con transparencia */
+  backdrop-filter: blur(5px);      /* Hace que el fondo se vea desenfocado detrás */
+  border: 3px solid var(--madera-rojiza);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  
+  /* background: linear-gradient(to bottom, rgba(2, 44, 34, 0.85), rgba(15, 50, 30, 0.95));
   border: 3px solid var(--madera-rojiza);
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
   display: block;
   margin: 1.5rem auto;
-  max-width: 100%;
+  max-width: 100%; */
 }
 
 /* --- BOTONES DE CONTROL --- */

@@ -150,13 +150,13 @@ function detectarAtrapado() {
       clearInterval(intervaloLimones); // Corregido typo original para evitar error
       limpiarCanvas();
       dibujarSuelo();
-      ctx.font = "30px Arial ";
-      ctx.fillStyle = "green";
+      ctx.font = "30px Arial";
+      ctx.fillStyle = "orange";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("¡FELICIDADES! ", canvas.width / 2, canvas.height / 2);
-      ctx.font = "20px Arial ";
-      ctx.fillStyle = "white ";
+      ctx.font = "20px Arial";
+      ctx.fillStyle = "white";
       ctx.fillText("Has alcanzado el puntaje máximo:  " + puntaje, canvas.width / 2, canvas.height / 2 + 40);
     }
   }
@@ -173,17 +173,17 @@ function detectarPerdido() {
     aparecerLimones();
     vidas--;
     mostrarEnSpan("txtVidas", vidas);
-    if (vidas === 0) {
+    if (vidas <= 0) {
       clearInterval(intervaloLimones);
       limpiarCanvas();
       dibujarSuelo();
-      ctx.font = "30px Arial ";
+      ctx.font = "30px Arial";
       ctx.fillStyle = "red";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText("GAME OVER ", canvas.width / 2, canvas.height / 2);
-      ctx.font = "20px Arial ";
-      ctx.fillStyle = "white ";
+      ctx.fillText("GAME OVER", canvas.width / 2, canvas.height / 2);
+      ctx.font = "20px Arial";
+      ctx.fillStyle = "white";
       ctx.fillText("Puntaje final:  " + puntaje, canvas.width / 2, canvas.height / 2 + 40);
     }
   }
