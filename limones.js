@@ -203,13 +203,25 @@ function aparecerLimones() {
 
 function reiniciarJuego() {
   clearInterval(intervaloLimones);
-  puntaje = 0;
-  vidas = 3;
-  velocidadLimones = 200;
-  mostrarEnSpan("txtPuntaje", puntaje);
-  mostrarEnSpan("txtVidas", vidas);
-  limonY = 0;
-  iniciarJuego();
+
+    // 1. Resetear variables lógicas
+    puntaje = 0;
+    vidas = 3;
+    velocidadLimones = 200;
+    
+    // 2. VOLVER A MOSTRAR LAS INSTRUCCIONES (Añade estas líneas)
+    mostrarInstruccionesCanvas = true; // Permite que el banner del canvas se dibuje
+    let instruccionesHTML = document.querySelector(".instrucciones-teclado");
+    if (instruccionesHTML) {
+        instruccionesHTML.style.display = "block"; // Muestra el texto debajo del canvas
+    }
+
+    // 3. Resetear interfaz
+    mostrarEnSpan("txtPuntaje", puntaje);
+    mostrarEnSpan("txtVidas", vidas);
+    
+    intervaloLimones = setInterval(bajarLimones, velocidadLimones);
+    aparecerLimones();
 }
 
 // ─────────────────────────────────────────────────────────────
