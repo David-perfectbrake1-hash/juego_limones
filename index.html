@@ -3,27 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caza Limones</title>
+  <title>Caza Limones - Expedición Amazónica</title>
+  <!-- Vinculación a la hoja de estilos -->
   <link rel="stylesheet" href="limones.css">
-  <!-- Tipografía moderna -->
+  <!-- Fuente Inter para tipografía limpia y moderna -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body onload="iniciarJuego()">
+  <!-- Contenedor principal con efecto glassmorphism -->
   <div class="contenedor">
     
-    <div class="logo-container">
-      <img src="1776124773.png" alt="Caza Limones Logo" class="game-logo">
-    </div>
-
+    <!-- Encabezado del juego -->
     <header class="game-header">
-      <h1>Caza Limones</h1>
-      <p class="subtitle">Atrapar Limones</p>
-      <p class="tagline">Si del cielo te caen limones .....</p>
+      <div class="logo-container">
+        <!-- Placeholder visual para logo de expedición/selva -->
+        <span style="font-size: 4rem; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));">🌿</span>
+      </div>
+      <h1>ATRAPA  LIMONES</h1>
+      <p class="subtitle">La selva te pone a prueba...</p>
+      <p class="tagline">¿Lograrás cosecharlos todos?</p>
     </header>
 
-    <div class="panel stats-panel">
+    <!-- Panel de estadísticas (IDs conservados estrictamente) -->
+    <div class="panel">
       <div class="stat-item">
         <span class="stat-label">Puntaje</span>
         <span class="stat-value" id="txtPuntaje">0</span>
@@ -34,19 +38,21 @@
       </div>
     </div>
 
+    <!-- Área de juego (Canvas) -->
     <canvas id="areaJuego" width="600" height="400"></canvas>
 
+    <!-- Botones de control -->
     <div class="botones">
-      <button id="izquierda" onclick="moverIzquierda()">⬅ Izquierda</button>
-      <button id="derecha" onclick="moverDerecha()">Derecha ➡</button>
+      <button onclick="moverIzquierda()">⬅ Izquierda</button>
+      <button onclick="moverDerecha()">Derecha ➡</button>
       <button id="reiniciar" onclick="reiniciarJuego()">🔄 REINICIAR</button>
     </div>
 
-    <footer class="author">Autor: David_RS</footer>
+    <p class="author">Autor: David_RS</p>
   </div>
 
-  <script src="limones.js"></script>
+  <!-- Scripts en orden de dependencia -->
   <script src="utils.js"></script>
-
+  <script src="limones.js"></script>
 </body>
 </html>
