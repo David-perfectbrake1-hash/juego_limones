@@ -182,3 +182,14 @@ canvas {
   color: var(--madera-oscura);
   font-weight: 600;
 }
+
+.instrucciones-teclado {
+  font-size: 0.9rem;
+  color: var(--madera-oscura); /* Usando el tono maderoso que definimos */
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+  font-style: italic;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+}
