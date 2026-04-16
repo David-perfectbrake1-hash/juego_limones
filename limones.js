@@ -11,7 +11,7 @@ let limonX = canvas.width / 2;
 let limonY = 0;
 let puntaje = 0;
 let vidas = 3;
-let velocidadLimones = 200;
+let velocidadLimones = 150;
 let intervaloLimones = null;
 let mostrarInstruccionesCanvas = true;
 
@@ -82,13 +82,13 @@ function dibujarPersonaje() {
    ========================================== */
 function dibujarLimones() {
   // Cuerpo ovalado amarillo-verdoso
-  ctx.fillStyle = "#E8D835";
+  ctx.fillStyle = "#e87735";
   ctx.beginPath();
   ctx.ellipse(limonX + ANCHO_LIMON / 2, limonY + ALTURA_LIMON / 2, ANCHO_LIMON / 2 - 2, ALTURA_LIMON / 2 - 4, 0, 0, Math.PI * 2);
   ctx.fill();
 
   // Sombra interna para dar volumen
-  ctx.fillStyle = "#C5B330";
+  ctx.fillStyle = "#caa606";
   ctx.beginPath();
   ctx.ellipse(limonX + ANCHO_LIMON / 2 - 5, limonY + ALTURA_LIMON / 2 + 3, 12, 18, 0, 0, Math.PI * 2);
   ctx.fill();
@@ -155,9 +155,9 @@ function detectarAtrapado() {
     puntaje++;
     mostrarEnSpan("txtPuntaje", puntaje);
     if (puntaje === 3) {
-      cambiarVelocidadLimones(150);
-    } else if (puntaje === 6) {
       cambiarVelocidadLimones(100);
+    } else if (puntaje === 6) {
+      cambiarVelocidadLimones(50);
     } else if (puntaje === 10) {
       clearInterval(intervaloLimones); // Corregido typo original para evitar error
       limpiarCanvas();
